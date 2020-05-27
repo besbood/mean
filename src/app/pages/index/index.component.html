@@ -1,0 +1,27 @@
+<nz-layout class="login-page">
+    <div class="section-header">
+        <a class="logo-container" href="http://www.banu.cn/">
+            <!--<img src="./assets/img/logo.svg" alt="logo">-->
+            <!--<img src="./assets/img/zorro.svg" alt="ng-zorro">-->
+            <img src="./assets/img/banu_logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="section-content">
+        <div class="content-bg">
+            <div class="bg-img"></div>
+            <div class="ng-slogan"></div>
+        </div>
+        <div class="form-wrap">
+            <div class="form-title">
+                <a [routerLink]="'login'" routerLinkActive='active'>登录</a>
+                <a [routerLink]="'regist'" routerLinkActive='active'>注册</a>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="section-footer">
+        <span class="copy-right">
+            <span>版权所有</span>&nbsp;<span>2019-2020</span>&nbsp;<span>&copy;豫ICP备19041559号-1</span>
+        </span>
+    </div>
+</nz-layout>

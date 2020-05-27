@@ -1,0 +1,68 @@
+<form nz-form class="login-form" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-control nzErrorTip="请输入用户名">
+            <nz-input-group nzPrefixIcon="user">
+                <input type="text" nz-input formControlName="userName" placeholder="请输入用户名" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="请输入密码">
+            <nz-input-group nzPrefixIcon="lock">
+                <input type="password" nz-input formControlName="password" placeholder="设置密码（6-25个字符，含英文大小写和数字）" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control [nzErrorTip]="passwordErrorTpl">
+            <nz-input-group nzPrefixIcon="lock">
+                <input nz-input type="password" formControlName="checkPassword" placeholder="请输入确认密码" />
+                <ng-template #passwordErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                        请输入确认密码!
+                    </ng-container>
+                    <ng-container *ngIf="control.hasError('confirm')">
+                        两次密码输入不一致!
+                    </ng-container>
+                </ng-template>
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <!--<nz-form-item>-->
+        <!--<nz-form-control-->
+            <!--style="width: 100%;"-->
+            <!--[nzSm]="14"-->
+            <!--[nzXs]="24"-->
+            <!--[nzValidateStatus]="validateForm.controls['phoneNumber']"-->
+            <!--nzErrorTip="请输入手机号码"-->
+        <!--&gt;-->
+            <!--<nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">-->
+                <!--<ng-template #addOnBeforeTemplate>-->
+                    <!--<nz-select formControlName="phoneNumberPrefix" class="phone-select">-->
+                    <!--<nz-option nzLabel="+86" nzValue="+86"></nz-option>-->
+                    <!--<nz-option nzLabel="+87" nzValue="+87"></nz-option>-->
+                    <!--</nz-select>-->
+                <!--</ng-template>-->
+                <!--<input nz-input style="height: 40px;" formControlName="phoneNumber" id="'phoneNumber'" placeholder="请输入手机号码" />-->
+            <!--</nz-input-group>-->
+        <!--</nz-form-control>-->
+    <!--</nz-form-item>-->
+    <!--<nz-form-item>-->
+        <!--<nz-form-control nzErrorTip="请输入短信验证码">-->
+            <!--<nz-input-group>-->
+                <!--<input style="width: calc(55% - 10px);height: 40px;" type="text" nz-input formControlName="messageCode" placeholder="短信验证码" />-->
+                <!--<button style="width: calc(45% - 10px);float: right;" nz-button class="coed-btn" nzType="primary">获取验证码</button>-->
+            <!--</nz-input-group>-->
+        <!--</nz-form-control>-->
+    <!--</nz-form-item>-->
+    <nz-form-item style="margin-bottom: 0;">
+        <nz-form-control>
+            <label nz-checkbox formControlName="remember">
+                <span>我同意</span>
+            </label>
+            <a>《xxx用户协议》《隐私政策》</a>
+            <button nz-button class="regist-btn" nzType="primary">同意协议并提交</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+    

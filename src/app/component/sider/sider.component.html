@@ -1,0 +1,14 @@
+<div class="logo"></div>
+<ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li nz-menu-item [routerLink]="'/home/dashboard'" routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}">
+        <i nz-icon nzType="home"></i>
+        <span>首页</span>
+    </li>
+    <li nz-submenu nzTitle="用户管理" nzIcon="user">
+        <ul>
+            <li nz-menu-item [routerLink]="'/home/users/ordinary'" routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}">普通用户</li>
+            <li nz-menu-item [routerLink]="'/home/users/member'" routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}">会员用户</li>
+            <li nz-menu-item [routerLink]="'/home/users/admin'" routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}">管理员</li>
+        </ul>
+    </li>
+</ul>
